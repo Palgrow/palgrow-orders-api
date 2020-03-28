@@ -1,22 +1,15 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: "v1"
+kind: "Service"
 metadata:
-  name: orders-api
-  namespace: staging
+  name: "orders-service"
+  namespace: "staging"
   labels:
-    app: orders-api
+    app: "orders-api"
 spec:
-  replicas: 3
+  ports:
+    - protocol: "TCP"
+      port: 80
+      targetPort: 1337
   selector:
-    matchLabels:
-      app: orders-api
-  template:
-    metadata:
-      labels:
-        app: orders-api
-    spec:
-      containers:
-        - name: orders-api
-          image: gcr.io/palgrow/orders-api:latest
-          ports:
-            - containerPort: 80
+    app: "orders-api"
+  type: "LoadBalancer"
