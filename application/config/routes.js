@@ -19,8 +19,8 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': { view: 'pages/homepage' },
-
+ 'GET /': 'HealthController.index',
+ 'GET /orders/': 'HealthController.index',
 
   /***************************************************************************
   *                                                                          *

@@ -9,22 +9,50 @@
  * https://sailsjs.com/config/bootstrap
  */
 
-module.exports.bootstrap = async function() {
+const _ = require('lodash');
+const axios = require('axios');
+const crypto = require('crypto');
+const Raven = require('raven');
+const dotenv = require('dotenv');
+const Promise = require('bluebird');
+const ResponseHelper = require('@dsninjas/response');
+const moment = require('moment');
+const path = require('path');
+const async = require('async');
+const { v4: uuidv4 } = require('uuid');
+const { Storage } = require('@google-cloud/storage');
 
-  // By convention, this is a good place to set up fake data during development.
-  //
-  // For example:
-  // ```
-  // // Set up fake development data (or if we already have some, avast)
-  // if (await User.count() > 0) {
-  //   return;
-  // }
-  //
-  // await User.createEach([
-  //   { emailAddress: 'ry@example.com', fullName: 'Ryan Dahl', },
-  //   { emailAddress: 'rachael@example.com', fullName: 'Rachael Shaw', },
-  //   // etc.
-  // ]);
-  // ```
+dotenv.config();
 
+const capitalize = string => string.charAt(0).toUpperCase() + string.slice(1);
+
+module.exports.bootstrap = async function(cb) {
+  const storage = new Storage();
+  const { bucket_name } = sails.config.custom.googleCloud;
+  global._ = _;
+  global.Axios = axios;
+  global.capitalize = capitalize;
+  global.moment = moment;
+  global.crypto = crypto;
+  global.Raven = Raven;
+  global.Promise = Promise;
+  global.GoogleCloudStorage = storage;
+  global.GoogleCloudBucket = storage.bucket(bucket_name);
+  global.Path = path;
+  global.Async = async;
+  global.UUID = uuidv4;
+
+  process
+    .on('unhandledRejection', (reason, p) => {
+      // eslint-disable-next-line no-console
+      console.error(reason, 'Unhandled Rejection at Promise', p);
+    })
+    .on('uncaughtException', err => {
+      // eslint-disable-next-line no-console
+      console.error(err, 'Uncaught Exception thrown');
+      process.exit(1);
+    });
+  Raven.config(sails.config.custom.raven.configUrl).install();
+  global.ResponseHelper = new ResponseHelper(Raven);
+  cb();
 };
