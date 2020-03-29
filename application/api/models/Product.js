@@ -10,6 +10,9 @@ module.exports = {
     organization: {
       model: "Organization"
     },
+    image: {
+      type: "json"
+    },
     name: {
       type: "string"
     },
@@ -29,6 +32,11 @@ module.exports = {
     minimum_order_qty: {
       type: "number",
       defaultsTo: 1
+    },
+    status: {
+      type: "string",
+      isIn: ["available", "unavailable"],
+      defaultsTo: "available"
     }
   }
 };

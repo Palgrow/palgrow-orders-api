@@ -10,13 +10,13 @@ module.exports = {
     organization: {
       model: "Organization"
     },
-    minimum_total_order_value: {
+    min_total_order_value: {
       type: "number"
     },
-    minimum_monthly_order_value: {
+    min_monthly_order_value: {
       type: "number"
     },
-    minimum_referrals: {
+    min_referrals: {
       type: "number"
     },
     time_constraint: {
