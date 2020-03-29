@@ -10,25 +10,30 @@ module.exports = {
     product: {
       model: "Product"
     },
-    quantity: {
+    qty: {
       type: "number",
-      defaultsTo: 0
+      defaultsTo: 1,
+      min: 1
     },
     cost_naira: {
       type: "number",
-      defaultsTo: 0
+      defaultsTo: 0,
+      min: 0
     },
     cost_points: {
       type: "number",
-      defaultsTo: 0
+      defaultsTo: 0,
+      min: 0
     },
     total_naira: {
       type: "number",
-      defaultsTo: 0
+      defaultsTo: 0,
+      min: 0
     },
     total_points: {
       type: "number",
-      defaultsTo: 0
+      defaultsTo: 0,
+      min: 0
     },
     code: {
       type: "string"

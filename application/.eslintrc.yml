@@ -1,0 +1,62 @@
+extends: airbnb-base
+env:
+  es6: true
+  node: true
+plugins: ["prettier"]
+parserOptions:
+  # ecmaVersion: 8
+  sourceType: module
+globals:
+  _: false
+  sails: false
+  Axios: false
+  capitalize: false
+  moment: false
+  Paystack: false
+  crypto: false
+  Raven: false
+  ResponseHelper: false
+  Path: false
+  Async: false
+  GoogleCloudStorage: false
+  GoogleCloudBucket: false
+  UUID: false
+  #Services
+  TokenService: false
+  CacheService: false
+  NotificationService: false
+  GCSService: false
+  #Models
+  User: false
+  Device: false
+  Distributor: false
+  Organization: false
+  OTP: false
+  Wallet: false
+  WalletType: false
+  SubWallet: false
+  BankAccount: false
+  Card: false
+  OrderItem: false
+  Product: false
+  ReferralRule: false
+  RewardClass: false
+  RewardClassStatus: false
+  Transaction: false
+rules:
+  max-len:
+    - 0
+    - 200
+    - 2
+  no-console: error
+  no-underscore-dangle: off
+  comma-dangle: [error, always-multiline, { functions: never }]
+  func-names: off
+  camelcase: off
+  consistent-return: off
+  global-require: off
+  arrow-parens: off
+  object-curly-newline: off
+  nonblock-statement-body-position: off
+  curly: off
+  implicit-arrow-linebreak: off

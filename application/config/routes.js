@@ -9,20 +9,17 @@
  */
 
 module.exports.routes = {
-
   /***************************************************************************
-  *                                                                          *
-  * Make the view located at `views/homepage.ejs` your home page.            *
-  *                                                                          *
-  * (Alternatively, remove this and add an `index.html` file in your         *
-  * `assets` directory)                                                      *
-  *                                                                          *
-  ***************************************************************************/
+   *                                                                          *
+   * Make the view located at `views/homepage.ejs` your home page.            *
+   *                                                                          *
+   * (Alternatively, remove this and add an `index.html` file in your         *
+   * `assets` directory)                                                      *
+   *                                                                          *
+   ***************************************************************************/
 
- 'GET /': 'HealthController.index',
- 'GET /orders/': 'HealthController.index',
+  'GET /': 'HealthController.index',
+  'GET /orders/': 'HealthController.index',
 
-
-
-
+  'POST /orders/product/': 'ProductController.create',
 };

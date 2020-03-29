@@ -1,3 +1,6 @@
-assets/dependencies/**/*.js
-views/**/*.ejs
-
+/tasks/
+/test/
+/assets/
+/coverage/
+/app.js
+/Gruntfile.js

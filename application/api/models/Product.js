@@ -8,35 +8,48 @@
 module.exports = {
   attributes: {
     organization: {
-      model: "Organization"
-    },
-    image: {
-      type: "json"
+      model: 'Organization',
+      required: true,
     },
     name: {
-      type: "string"
+      type: 'string',
+      required: true,
     },
-    SKU: {
-      type: "string"
+    sku: {
+      type: 'string',
+      required: true,
     },
     description: {
-      type: "string"
+      type: 'string',
+      required: true,
     },
-    cost: {
-      type: "json",
-      defaultsTo: {
-        naira: 1,
-        points: 1
-      }
+    image: {
+      type: 'json',
     },
-    minimum_order_qty: {
-      type: "number",
-      defaultsTo: 1
+    cost_naira: {
+      type: 'number',
+      min: 1,
+      required: true,
+    },
+    sale_naira: {
+      type: 'number',
+      min: 1,
+      required: true,
+    },
+    cost_points: {
+      type: 'number',
+      min: 1,
+      required: true,
+    },
+    min_order_qty: {
+      type: 'number',
+      min: 1,
+      required: true,
     },
     status: {
-      type: "string",
-      isIn: ["available", "unavailable"],
-      defaultsTo: "available"
-    }
-  }
+      type: 'string',
+      isIn: ['available', 'unavailable'],
+      defaultsTo: 'available',
+    },
+  },
 };
