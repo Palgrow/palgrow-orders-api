@@ -11,6 +11,9 @@ module.exports = {
       const { organization } = req.user;
       const payload = req.body;
       const reward_class = await RewardClass.create({ ...payload, organization }).fetch();
+
+      // TODO: re-evaulate all distributor reward classes for current organization
+
       return ResponseHelper.json(201, res, 'Reward class created successfully', reward_class);
     } catch (e) {
       return ResponseHelper.error(e, res);
