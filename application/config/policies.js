@@ -20,5 +20,9 @@ module.exports.policies = {
 
   ProductController: {
     create: ['isAuthorized', 'isAdmin'],
+    read: ['isAuthorized'],
+    update: ['isAuthorized', 'isAdmin'],
+    list: ['isAuthorized'],
+    query: ['isAuthorized'],
   },
 };

@@ -22,4 +22,8 @@ module.exports.routes = {
   'GET /orders/': 'HealthController.index',
 
   'POST /orders/product/': 'ProductController.create',
+  'GET /orders/product/:id': 'ProductController.read',
+  'GET /orders/product/': 'ProductController.list',
+  'PATCH /orders/product/:id': 'ProductController.update',
+  'POST /orders/product/query': 'ProductController.query',
 };
