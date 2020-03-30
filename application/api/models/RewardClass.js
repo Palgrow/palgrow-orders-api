@@ -24,6 +24,10 @@ module.exports = {
     },
     point_reward_per_product: {
       type: "number"
+    },
+    distributors: {
+      collection: 'Distributor',
+      via: 'reward_class'
     }
   }
 };

@@ -26,4 +26,11 @@ module.exports.routes = {
   'GET /orders/product/': 'ProductController.list',
   'PATCH /orders/product/:id': 'ProductController.update',
   'POST /orders/product/query': 'ProductController.query',
+
+  'POST /orders/reward-class/': 'ProductController.create',
+  'GET /orders/reward-class/:id': 'ProductController.read',
+  'GET /orders/reward-class/': 'ProductController.list',
+  'PATCH /orders/reward-class/:id': 'ProductController.update',
+  'POST /orders/reward-class/query': 'ProductController.query',
+  'DELETE /orders/reward-class/:id': 'ProductController.delete',
 };

@@ -19,6 +19,9 @@ module.exports = {
     organization: {
       model: 'Organization',
     },
+    reward_class: {
+      model: 'RewardClass',
+    },
     status: {
       type: 'string',
       isIn: ['pristine', 'pending', 'verified', 'suspended'],
