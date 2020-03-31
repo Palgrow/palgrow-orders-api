@@ -10,6 +10,10 @@ module.exports = {
     organization: {
       model: "Organization"
     },
+    name: {
+      type: "string",
+      required: true
+    },
     min_total_order_value: {
       type: "number"
     },
