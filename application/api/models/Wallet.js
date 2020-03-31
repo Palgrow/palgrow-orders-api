@@ -21,9 +21,6 @@ module.exports = {
     organization: {
       model: 'organization',
     },
-    distributor: {
-      model: 'distributor',
-    },
     cards: {
       collection: 'Card',
       via: 'wallet',
