@@ -62,7 +62,8 @@ module.exports = {
       model: 'Device',
     },
     distributor: {
-      model: 'Distributor',
+      collection: 'Distributor',
+      via: 'user'
     },
     organization: {
       model: 'Organization',

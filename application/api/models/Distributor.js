@@ -7,6 +7,9 @@
 
 module.exports = {
   attributes: {
+    user: {
+      model: 'User'
+    },
     personnel_id: {
       type: 'string',
     },
