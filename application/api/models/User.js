@@ -12,8 +12,14 @@ module.exports = {
   fetchRecordsOnUpdate: true,
   attributes: {
     avatar: {
-      type: 'string',
-      defaultsTo: 'https://i.pravatar.cc/300',
+      type: 'json',
+      defaultsTo: {
+        url: 'https://i.pravatar.cc/300',
+        name: '',
+        type: '',
+        extension: '',
+        size: 0,
+      },
     },
     name_first: {
       type: 'string',
@@ -46,10 +52,6 @@ module.exports = {
       defaultsTo: 'distributor',
       isIn: ['distributor', 'admin', 'super-admin'],
     },
-    token: {
-      type: 'string',
-      allowNull: true,
-    },
     password: {
       type: 'string',
     },
@@ -63,7 +65,7 @@ module.exports = {
     },
     distributor: {
       collection: 'Distributor',
-      via: 'user'
+      via: 'user',
     },
     organization: {
       model: 'Organization',
