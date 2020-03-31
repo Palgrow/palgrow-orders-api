@@ -7,15 +7,18 @@
 
 module.exports = {
   attributes: {
+    distributor: {
+      model: 'Distributor',
+    },
     wallet_type: {
-      model: "WalletType"
+      model: 'WalletType',
     },
     wallet: {
-      model: "Wallet"
+      model: 'Wallet',
     },
     balance: {
-      type: "number",
-      defaultsTo: 0
-    }
-  }
+      type: 'number',
+      defaultsTo: 0,
+    },
+  },
 };

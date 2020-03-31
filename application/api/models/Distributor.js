@@ -8,7 +8,7 @@
 module.exports = {
   attributes: {
     user: {
-      model: 'User'
+      model: 'User',
     },
     personnel_id: {
       type: 'string',
@@ -18,6 +18,10 @@ module.exports = {
     },
     referred_by: {
       model: 'Distributor',
+    },
+    sub_wallets: {
+      collection: 'SubWallet',
+      via: 'distributor',
     },
     organization: {
       model: 'Organization',
