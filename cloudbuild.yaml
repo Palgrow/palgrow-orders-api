@@ -14,7 +14,7 @@ steps:
       '--build-arg',
       'POSTGRES_HOST=${_POSTGRES_HOST}',
       '--build-arg',
-      'POSTGRES_PORT=${_POSTGRES_HOST}',
+      'POSTGRES_PORT=${_POSTGRES_PORT}',
       '--build-arg',
       'POSTGRES_USER=${_POSTGRES_USER}',
       '--build-arg',

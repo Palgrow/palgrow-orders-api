@@ -6,27 +6,26 @@
  */
 
 module.exports = {
-
   attributes: {
     amount_naira: {
       type: 'number',
-      defaultsTo: 0
+      defaultsTo: 0,
     },
     debit: {
-      model: 'User'
+      model: 'User',
     },
     credit: {
-      model: 'User'
+      model: 'User',
     },
     amount_points: {
       type: 'number',
-      defaultsTo: 0
+      defaultsTo: 0,
     },
     bank_account: {
       model: 'BankAccount',
     },
     order: {
-      model: 'Order'
+      model: 'Order',
     },
     card: {
       model: 'Card',
@@ -47,8 +46,5 @@ module.exports = {
       isIn: ['pending', 'successful', 'failed', 'in-progress'],
       defaultsTo: 'pending',
     },
-
   },
-
 };
-

@@ -10,7 +10,7 @@ module.exports = {
     user: {
       model: 'User',
     },
-    personnel_id: {
+    code_dist: {
       type: 'string',
     },
     code_referral: {
@@ -31,8 +31,8 @@ module.exports = {
     },
     status: {
       type: 'string',
-      isIn: ['pristine', 'pending', 'verified', 'suspended'],
-      defaultsTo: 'pristine',
+      isIn: ['verified', 'suspended'],
+      defaultsTo: 'verified',
     },
   },
 };

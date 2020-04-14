@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: orders-api
-          image: gcr.io/palgrow/orders-api:latest
+          image: gcr.io/palgrow/orders-api
           ports:
             - containerPort: 80

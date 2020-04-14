@@ -9,6 +9,7 @@ module.exports = {
       user: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: 'palgrow',
+      poolSize: 1
     },
     cache: {
       adapter: require('sails-redis'),
