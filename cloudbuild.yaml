@@ -38,7 +38,7 @@ steps:
       - "CLOUDSDK_COMPUTE_ZONE=europe-west6-c"
       - "CLOUDSDK_CONTAINER_CLUSTER=staging"
 
-    # Set new deployment image
+  # Set new deployment image
   - name: "gcr.io/cloud-builders/kubectl"
     args:
       [
@@ -46,7 +46,7 @@ steps:
         "image",
         "deployment",
         "orders-api",
-        "ordera-api=gcr.io/$PROJECT_ID/orders-api:$COMMIT_SHA",
+        "orders-api=gcr.io/$PROJECT_ID/orders-api:$COMMIT_SHA",
         "--namespace=staging",
       ]
     env:
