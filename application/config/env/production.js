@@ -9,6 +9,13 @@ module.exports = {
       password: process.env.POSTGRES_PASSWORD,
       database: 'palgrow',
     },
+    mongo: {
+      adapter: require('sails-mongo'),
+      url: process.env.MONGO_HOST,
+      user: process.env.MONGO_USER,
+      password: process.env.MONGO_PASSWORD,
+      database: 'palgrow',
+    },
     cache: {
       adapter: require('sails-redis'),
       host: process.env.REDIS_HOST,
@@ -16,7 +23,7 @@ module.exports = {
     },
   },
   models: {
-    datastore: 'postgres',
+    datastore: 'mongo',
     migrate: 'safe',
   },
   custom: {
