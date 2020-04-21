@@ -2,25 +2,22 @@ module.exports = {
   port: process.env.PORT || 1337,
   secret: process.env.APP_SECRET,
   datastores: {
-    postgres: {
-      adapter: require('sails-postgresql'),
-      host: process.env.POSTGRES_HOST,
-      user: process.env.POSTGRES_USER,
-      password: process.env.POSTGRES_PASSWORD,
-      database: 'palgrow',
-    },
+    // postgres: {
+    //   adapter: require('sails-postgresql'),
+    //   host: process.env.POSTGRES_HOST,
+    //   user: process.env.POSTGRES_USER,
+    //   password: process.env.POSTGRES_PASSWORD,
+    //   database: 'palgrow',
+    // },
     mongo: {
       adapter: require('sails-mongo'),
-      url: process.env.MONGO_HOST,
-      user: process.env.MONGO_USER,
-      password: process.env.MONGO_PASSWORD,
-      database: 'palgrow',
+      url: process.env.MONGO_URL,
     },
-    cache: {
-      adapter: require('sails-redis'),
-      host: process.env.REDIS_HOST,
-      port: process.env.REDIS_PORT,
-    },
+    // cache: {
+    //   adapter: require('sails-redis'),
+    //   host: process.env.REDIS_HOST,
+    //   port: process.env.REDIS_PORT,
+    // },
   },
   models: {
     datastore: 'mongo',

@@ -1,15 +1,14 @@
-apiVersion: "v1"
-kind: "Service"
+apiVersion: v1
+kind: Service
 metadata:
-  name: "orders-service"
-  namespace: "staging"
+  name: orders-service
   labels:
-    app: "orders-api"
+    app: orders-api
 spec:
   ports:
-    - protocol: "TCP"
+    - protocol: TCP
       port: 80
       targetPort: 1337
   selector:
-    app: "orders-api"
-  type: "LoadBalancer"
+    app: orders-api
+  type: LoadBalancer

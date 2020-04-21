@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: orders-api
-  namespace: staging
   labels:
     app: orders-api
 spec:

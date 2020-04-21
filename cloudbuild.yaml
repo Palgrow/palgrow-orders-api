@@ -14,11 +14,7 @@ steps:
         "--build-arg",
         "RAVEN_CONFIG_URL=${_RAVEN_CONFIG_URL}",
         "--build-arg",
-        "POSTGRES_HOST=${_POSTGRES_HOST}",
-        "--build-arg",
-        "POSTGRES_USER=${_POSTGRES_USER}",
-        "--build-arg",
-        "POSTGRES_PASSWORD=${_POSTGRES_PASSWORD}",
+        "MONGO_URL=${_MONGO_URL}",
         "--build-arg",
         "REDIS_HOST=${_REDIS_HOST}",
         "--build-arg",
@@ -35,7 +31,7 @@ steps:
   - name: "gcr.io/cloud-builders/kubectl"
     args: ["apply", "-f", "k8s/"]
     env:
-      - "CLOUDSDK_COMPUTE_ZONE=europe-west6-c"
+      - "CLOUDSDK_COMPUTE_ZONE=us-east1-b"
       - "CLOUDSDK_CONTAINER_CLUSTER=staging"
 
   # Set new deployment image
@@ -47,10 +43,9 @@ steps:
         "deployment",
         "orders-api",
         "orders-api=gcr.io/$PROJECT_ID/orders-api:$COMMIT_SHA",
-        "--namespace=staging",
       ]
     env:
-      - "CLOUDSDK_COMPUTE_ZONE=europe-west6-c"
+      - "CLOUDSDK_COMPUTE_ZONE=us-east1-b"
       - "CLOUDSDK_CONTAINER_CLUSTER=staging"
 
 options:
