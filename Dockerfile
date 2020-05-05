@@ -32,7 +32,7 @@ RUN gsutil cp gs://palgrow-staging/keys/gc_credentials.json .
 
 RUN touch .env
 
-ENV GOOGLE_APPLICATION_CREDENTIALS='/usr/src/app/google_cloud_credentials.json'
+ENV GOOGLE_APPLICATION_CREDENTIALS='/usr/src/app/gc_credentials.json'
 
 EXPOSE 1337
 
