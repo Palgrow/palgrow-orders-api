@@ -55,6 +55,7 @@ module.exports = {
       allRoutes: true,
       allowOrigins: '*',
       allowCredentials: false,
+      allowRequestHeaders: '*',
     },
   },
 };

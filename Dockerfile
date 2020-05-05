@@ -1,4 +1,4 @@
-FROM node:current-slim
+FROM boiyaa/google-cloud-sdk-nodejs:latest
 
 ARG PORT
 ENV PORT=${PORT}
@@ -24,14 +24,14 @@ ENV API_BASE_URL=${API_BASE_URL}
 ARG GC_BUCKET_NAME
 ENV GC_BUCKET_NAME=${GC_BUCKET_NAME}
 
-
-ARG GC_CREDENTIALS
-
 WORKDIR /usr/src/app
 COPY ./application/package.json .
 RUN npm install
-RUN echo ${GC_CREDENTIALS} >> google_cloud_credentials.json
+
+RUN gsutil cp gs://palgrow-staging/keys/gc_credentials.json .
+
 RUN touch .env
+
 ENV GOOGLE_APPLICATION_CREDENTIALS='/usr/src/app/google_cloud_credentials.json'
 
 EXPOSE 1337

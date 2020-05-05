@@ -22,8 +22,6 @@ steps:
         "--build-arg",
         "API_BASE_URL=${_API_BASE_URL}",
         "--build-arg",
-        "GC_CREDENTIALS=${_GC_CREDENTIALS}",
-        "--build-arg",
         "GC_BUCKET_NAME=${_GC_BUCKET_NAME}",
       ]
 
