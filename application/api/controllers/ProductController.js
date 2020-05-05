@@ -32,6 +32,7 @@ module.exports = {
       return ResponseHelper.error(e, res);
     }
   },
+  
   update: async (req, res) => {
     try {
       const {
