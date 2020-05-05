@@ -39,5 +39,3 @@ EXPOSE 1337
 CMD [ "npm", "start" ]
 
 COPY ./application/ .
-
-#RUN npm test
