@@ -36,7 +36,7 @@ module.exports = {
       const page = _page || 1;
       const skip = perPage * (page - 1);
       const criteria = { organization };
-      const records = await ReferralRule.find({ limit: perPage, skip, criteria });
+      const records = await ReferralRule.find({ limit: perPage, skip, where: criteria });
       const count = await Product.count(criteria);
       const meta = {
         page,
