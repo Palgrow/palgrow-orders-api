@@ -20,9 +20,11 @@ module.exports = {
     },
     generation_starting: {
       type: 'number',
+      min: 0,
     },
     generation_ending: {
       type: 'number',
+      min: 1,
     },
     percentage_reward_delta: {
       type: 'number',
@@ -36,12 +38,15 @@ module.exports = {
     },
     max_idle_time_months: {
       type: 'number',
+      min: 0,
     },
     min_referrals_per_month: {
       type: 'number',
+      min: 0,
     },
     max_referrals: {
       type: 'number',
+      min: 0,
     },
     status: {
       type: 'string',
