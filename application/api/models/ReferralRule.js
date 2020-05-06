@@ -8,41 +8,44 @@
 module.exports = {
   attributes: {
     organization: {
-      model: "Organization"
+      model: 'Organization',
     },
     type: {
-      type: "string",
-      isIn: ["per-referral", "per-generation"]
+      type: 'string',
+      isIn: ['per-referral', 'per-generation'],
     },
     reward_application: {
-      type: "string",
-      isIn: ["first-purchase", "all-purchases"]
+      type: 'string',
+      isIn: ['first-purchase', 'all-purchases'],
     },
     generation_starting: {
-      type: "number"
+      type: 'number',
     },
     generation_ending: {
-      type: "number"
+      type: 'number',
     },
     percentage_reward_delta: {
-      type: "number",
+      type: 'number',
       min: 0,
-      max: 100
+      max: 100,
     },
     percentage_reward_earnings: {
-      type: "number",
+      type: 'number',
       min: 0,
-      max: 100
+      max: 100,
     },
     max_idle_time: {
-      type: "number"
+      type: 'number',
     },
     min_referrals_per_month: {
-      type: "number"
+      type: 'number',
+    },
+    max_referrals: {
+      type: 'number',
     },
     status: {
-      type: "string",
-      isIn: ["active", "inactive"]
-    }
-  }
+      type: 'string',
+      isIn: ['active', 'inactive'],
+    },
+  },
 };
