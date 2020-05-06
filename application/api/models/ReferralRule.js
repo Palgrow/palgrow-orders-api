@@ -34,7 +34,7 @@ module.exports = {
       min: 0,
       max: 100,
     },
-    max_idle_time: {
+    max_idle_time_months: {
       type: 'number',
     },
     min_referrals_per_month: {
