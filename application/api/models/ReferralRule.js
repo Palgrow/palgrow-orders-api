@@ -10,6 +10,14 @@ module.exports = {
     organization: {
       model: 'Organization',
     },
+    name: {
+      type: 'string',
+      allowNull: false,
+    },
+    description: {
+      type: 'string',
+      allowNull: false,
+    },
     type: {
       type: 'string',
       isIn: ['per-referral', 'per-generation'],
