@@ -34,4 +34,13 @@ module.exports.policies = {
     query: ['isAuthorized'],
     delete: ['isAuthorized', 'isAdmin'],
   },
+
+  ReferralRuleController: {
+    create: ['isAuthorized', 'isAdmin'],
+    read: ['isAuthorized', 'isAdmin'],
+    update: ['isAuthorized', 'isAdmin'],
+    list: ['isAuthorized', 'isAdmin'],
+    query: ['isAuthorized'],
+    delete: ['isAuthorized', 'isAdmin'],
+  },
 };

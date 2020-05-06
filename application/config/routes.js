@@ -33,4 +33,9 @@ module.exports.routes = {
   'PATCH /orders/reward-class/:id': 'RewardClassController.update',
   'POST /orders/reward-class/query': 'RewardClassController.query',
   'DELETE /orders/reward-class/:id': 'RewardClassController.delete',
+
+  'POST /orders/referral-rule/': 'ReferralRuleController.create',
+  'GET /orders/referral-rule/:id': 'ReferralRuleController.read',
+  'GET /orders/referral-rule/': 'ReferralRuleController.list',
+  'PATCH /orders/referral-rule/:id': 'ReferralRuleController.update',
 };
