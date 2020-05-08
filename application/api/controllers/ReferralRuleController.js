@@ -71,7 +71,19 @@ module.exports = {
 
   delete: async (req, res) => {
     try {
-      return ResponseHelper.json(201, res, 'Referral rule created successfully');
+      const { id } = req.params;
+      const { organization } = req.user;
+      let rule = ReferralRule.findOne(id);
+      if (!rule) return ResponseHelper.json(404, res, 'Reward class not found');
+      if (rule.organization !== organization) {
+        return ResponseHelper.json(
+          403,
+          res,
+          'User must be administrator of organization that created reward referral rule to delete'
+        );
+      }
+      rule = await ReferralRule.destroyOne(id);
+      return ResponseHelper.json(201, res, 'Referral rule deleted successfully', rule);
     } catch (e) {
       return ResponseHelper.error(e, res);
     }
