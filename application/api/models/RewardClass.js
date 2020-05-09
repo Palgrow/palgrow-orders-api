@@ -50,6 +50,10 @@ module.exports = {
       type: "number",
       min: 0
     },
+    status: {
+      type: 'string',
+      isIn: ['active', 'inactive'],
+    },
     distributors: {
       collection: 'Distributor',
       via: 'reward_class'
