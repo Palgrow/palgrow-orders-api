@@ -18,6 +18,11 @@ module.exports = {
       type: "string",
       required: true
     },
+    order: {
+      type: "number",
+      min: 0,
+      autoIncrement: true
+    },
     min_total_order_value: {
       type: "number",
       min: 0
