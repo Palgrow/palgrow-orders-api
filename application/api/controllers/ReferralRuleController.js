@@ -83,7 +83,7 @@ module.exports = {
         );
       }
       rule = await ReferralRule.destroyOne(id);
-      return ResponseHelper.json(201, res, 'Referral rule deleted successfully', rule);
+      return ResponseHelper.json(200, res, 'Referral rule deleted successfully', rule);
     } catch (e) {
       return ResponseHelper.error(e, res);
     }

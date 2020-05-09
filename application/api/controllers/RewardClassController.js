@@ -69,7 +69,7 @@ module.exports = {
       const {
         user: { organization },
         query: { per_page, page: _page },
-      } = req.user;
+      } = req;
       const criteria = { organization };
       const perPage = per_page || 20;
       const page = _page || 1;
