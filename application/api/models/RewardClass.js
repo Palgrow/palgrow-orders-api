@@ -14,20 +14,41 @@ module.exports = {
       type: "string",
       required: true
     },
+    description: {
+      type: "string",
+      required: true
+    },
     min_total_order_value: {
-      type: "number"
+      type: "number",
+      min: 0
+    },
+    max_total_order_value: {
+      type: "number",
+      min: 0
     },
     min_monthly_order_value: {
-      type: "number"
+      type: "number",
+      min: 0
+    },
+    max_monthly_order_value: {
+      type: "number",
+      min: 0
     },
     min_referrals: {
-      type: "number"
+      type: "number",
+      min: 0
+    },
+    max_referrals: {
+      type: "number",
+      min: 0
     },
     time_constraint: {
-      type: "number"
+      type: "number",
+      min: 0
     },
     point_reward_per_product: {
-      type: "number"
+      type: "number",
+      min: 0
     },
     distributors: {
       collection: 'Distributor',
