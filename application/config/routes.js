@@ -31,6 +31,7 @@ module.exports.routes = {
   'GET /orders/reward-class/:id': 'RewardClassController.read',
   'GET /orders/reward-class/': 'RewardClassController.list',
   'PATCH /orders/reward-class/:id': 'RewardClassController.update',
+  'PATCH /orders/reward-class/bulk': 'RewardClassController.update_bulk',
   'POST /orders/reward-class/query': 'RewardClassController.query',
   'DELETE /orders/reward-class/:id': 'RewardClassController.delete',
 

@@ -10,9 +10,9 @@ module.exports = {
     try {
       const { organization } = req.user;
       let order = await RewardClass.count({ organization });
-      order +=1;
-      const payload = {...req.body, order};
-      const reward_class = await RewardClass.create({ ...payload, organization }).fetch()
+      order += 1;
+      const payload = { ...req.body, order };
+      const reward_class = await RewardClass.create({ ...payload, organization }).fetch();
       // TODO: re-evaulate all distributor reward classes for current organization
       return ResponseHelper.json(201, res, 'Reward class created successfully', reward_class);
     } catch (e) {
@@ -41,6 +41,27 @@ module.exports = {
       reward_class = await RewardClass.updateOne(reward_class_id).set(payload);
 
       return ResponseHelper.json(200, res, 'Reward class updated successfully', reward_class);
+    } catch (e) {
+      return ResponseHelper.error(e, res);
+    }
+  },
+  update_bulk: async (req, res) => {
+    try {
+      const { organization } = req.user;
+      const payload = req.body;
+      const classes = await RewardClass.find({ id: payload.map((id) => id) });
+      classes.forEach((item) => {
+        if (item.organization !== organization) {
+          return ResponseHelper.json(
+            403,
+            res,
+            'User must be administrator of organization that created reward classes to update'
+          );
+        }
+      });
+
+      await Promise.all(payload.map((item) => RewardClass.updateOne(item.id).set(item)));
+      return ResponseHelper.json(200, res, 'Reward classes updated successfully');
     } catch (e) {
       return ResponseHelper.error(e, res);
     }

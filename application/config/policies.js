@@ -30,6 +30,7 @@ module.exports.policies = {
     create: ['isAuthorized', 'isAdmin'],
     read: ['isAuthorized', 'isAdmin'],
     update: ['isAuthorized', 'isAdmin'],
+    update_bulk: ['isAuthorized', 'isAdmin'],
     list: ['isAuthorized', 'isAdmin'],
     query: ['isAuthorized'],
     delete: ['isAuthorized', 'isAdmin'],
