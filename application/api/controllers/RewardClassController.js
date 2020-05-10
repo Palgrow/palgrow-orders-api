@@ -13,7 +13,7 @@ module.exports = {
       order += 1;
       const payload = { ...req.body, order };
       const reward_class = await RewardClass.create({ ...payload, organization }).fetch();
-      // TODO: re-evaulate all distributor reward classes for current organization
+      // TODO: re-evaluate all distributor reward classes for current organization
       return ResponseHelper.json(201, res, 'Reward class created successfully', reward_class);
     } catch (e) {
       return ResponseHelper.error(e, res);
@@ -36,7 +36,7 @@ module.exports = {
           'User must be administrator of organization that created reward class to update'
         );
 
-      // TODO: re-evaulate all distributor reward classes for current organization
+      // TODO: re-evaluate all distributor reward classes for current organization
 
       reward_class = await RewardClass.updateOne(reward_class_id).set(payload);
 
@@ -154,7 +154,7 @@ module.exports = {
           'User must be administrator of organization that created reward class to delete'
         );
 
-      // TODO: re-evaulate all distributor reward classes for current organization
+      // TODO: re-evaluate all distributor reward classes for current organization
 
       reward_class = await RewardClass.destroyOne(reward_class_id);
 
