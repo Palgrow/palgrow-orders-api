@@ -21,7 +21,6 @@ module.exports = {
     order: {
       type: "number",
       min: 0,
-      autoIncrement: true
     },
     min_total_order_value: {
       type: "number",
@@ -62,6 +61,10 @@ module.exports = {
     distributors: {
       collection: 'Distributor',
       via: 'reward_class'
+    },
+    isDeleted: {
+      type: "boolean",
+      defaultsTo: false
     }
   }
 };
