@@ -49,7 +49,7 @@ module.exports = {
     try {
       const { organization } = req.user;
       const payload = req.body;
-      const classes = await RewardClass.find({ id: payload.map((id) => id) });
+      const classes = await RewardClass.find({ id: payload.map(({ id }) => id) });
       classes.forEach((item) => {
         if (item.organization !== organization) {
           return ResponseHelper.json(
