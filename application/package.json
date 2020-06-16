@@ -73,6 +73,6 @@
   "author": "devmarshall",
   "license": "",
   "engines": {
-    "node": "^10.15"
+    "node": "^12.0"
   }
 }
