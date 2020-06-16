@@ -16,6 +16,8 @@ steps:
         "--build-arg",
         "MONGO_URL=${_MONGO_URL}",
         "--build-arg",
+        "MONGO_REPLICA_SET=${_MONGO_REPLICA_SET}",
+        "--build-arg",
         "REDIS_HOST=${_REDIS_HOST}",
         "--build-arg",
         "REDIS_PORT=${_REDIS_PORT}",

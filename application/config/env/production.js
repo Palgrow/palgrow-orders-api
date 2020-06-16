@@ -10,14 +10,12 @@ module.exports = {
     //   database: 'palgrow',
     // },
     mongo: {
-      adapter: require('sails-mongo'),
+      adapter: require("sails-mongo"),
       url: process.env.MONGO_URL,
+      replicaSet: process.env.MONGO_REPLICA_SET,
+      authSource:'admin',
+      ssl: true
     },
-    // cache: {
-    //   adapter: require('sails-redis'),
-    //   host: process.env.REDIS_HOST,
-    //   port: process.env.REDIS_PORT,
-    // },
   },
   models: {
     datastore: 'mongo',
