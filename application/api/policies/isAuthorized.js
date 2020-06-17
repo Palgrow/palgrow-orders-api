@@ -9,6 +9,7 @@ module.exports = (req, res, next) => {
   const token = credentials;
 
   TokenService.verify(token, (err, decoded) => {
+    console.log(err);
     if (err) return ResponseHelper.json(401, res, 'Invalid token');
     const {
       data: { user },
