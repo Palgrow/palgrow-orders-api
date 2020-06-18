@@ -37,7 +37,6 @@ globals:
   SubWallet: false
   BankAccount: false
   Card: false
-  OrderItem: false
   Product: false
   ReferralRule: false
   RewardClass: false

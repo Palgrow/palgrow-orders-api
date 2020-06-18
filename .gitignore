@@ -117,6 +117,7 @@ node_modules
 *~
 *#
 .DS_STORE
+.idea
 .netbeans
 nbproject
 *.iml

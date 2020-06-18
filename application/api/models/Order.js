@@ -8,28 +8,32 @@
 module.exports = {
   attributes: {
     code: {
-      type: "string"
+      type: 'string',
     },
     distributor: {
-      model: "Distributor"
+      model: 'Distributor',
     },
     organization: {
-      model: "Organization"
+      model: 'Organization',
     },
     amount_naira: {
-      type: "number",
-      defaultsTo: 0
+      type: 'number',
+      defaultsTo: 0,
     },
     amount_points: {
-      type: "number",
-      defaultsTo: 0
+      type: 'number',
+      defaultsTo: 0,
     },
-    order_items: {
-      collection: "OrderItem",
-      via: "order"
+    product: {
+      model: 'Product',
     },
     transaction: {
-      model: "Transaction"
-    }
-  }
+      model: 'Transaction',
+    },
+    status: {
+      type: 'string',
+      isIn: ['pending', 'in-progress', 'cancelled', 'successful'],
+      defaultsTo: 'pending',
+    },
+  },
 };
