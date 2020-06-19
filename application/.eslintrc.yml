@@ -25,6 +25,7 @@ globals:
   TokenService: false
   CacheService: false
   NotificationService: false
+  PaymentService: false
   GCSService: false
   #Models
   User: false

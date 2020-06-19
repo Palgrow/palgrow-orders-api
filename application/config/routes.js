@@ -40,4 +40,6 @@ module.exports.routes = {
   'GET /orders/referral-rule/': 'ReferralRuleController.list',
   'PATCH /orders/referral-rule/:id': 'ReferralRuleController.update',
   'DELETE /orders/referral-rule/:id': 'ReferralRuleController.delete',
+
+  'POST /orders/order/': 'OrderController.create',
 };

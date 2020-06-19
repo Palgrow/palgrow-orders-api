@@ -44,4 +44,8 @@ module.exports.policies = {
     query: ['isAuthorized'],
     delete: ['isAuthorized', 'isAdmin'],
   },
+
+  OrderController: {
+    create: ['isAuthorized', 'isDistributor'],
+  },
 };
