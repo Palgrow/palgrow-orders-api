@@ -11,15 +11,15 @@ module.exports = {
       type: 'number',
       defaultsTo: 0,
     },
+    amount_points: {
+      type: 'number',
+      defaultsTo: 0,
+    },
     debit: {
       model: 'User',
     },
     credit: {
       model: 'User',
-    },
-    amount_points: {
-      type: 'number',
-      defaultsTo: 0,
     },
     bank_account: {
       model: 'BankAccount',
@@ -29,6 +29,25 @@ module.exports = {
     },
     card: {
       model: 'Card',
+    },
+    type: {
+      type: 'string',
+      isIn: ['payment', 'reward', 'withdrawal'],
+      defaultsTo: 'payment',
+    },
+    amount_sub_wallet_naira: {
+      type: 'number',
+      defaultsTo: 0,
+    },
+    amount_sub_wallet_points: {
+      type: 'number',
+      defaultsTo: 0,
+    },
+    sub_wallet_naira: {
+      model: 'SubWallet',
+    },
+    sub_wallet_points: {
+      model: 'SubWallet',
     },
     reference: {
       type: 'string',
