@@ -35,6 +35,10 @@ module.exports = {
       isIn: ['payment', 'reward', 'withdrawal'],
       defaultsTo: 'payment',
     },
+    amount_card_naira: {
+      type: 'number',
+      defaultsTo: 0,
+    },
     amount_sub_wallet_naira: {
       type: 'number',
       defaultsTo: 0,
