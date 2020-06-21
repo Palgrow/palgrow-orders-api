@@ -3,7 +3,7 @@ const base_url = sails.config.settings.api.baseUrl;
 module.exports = {
   check_order: async (body, token) =>
     Axios({
-      url: `${base_url}/payment/transaction/check_order`,
+      url: `${base_url}payment/transaction/check_order`,
       method: 'POST',
       data: body,
       headers: {
@@ -13,7 +13,7 @@ module.exports = {
     }),
   charge_order: async (body, token) =>
     Axios({
-      url: `${base_url}/payment/transaction/charge_order`,
+      url: `${base_url}payment/transaction/charge_order`,
       method: 'POST',
       data: body,
       headers: {
