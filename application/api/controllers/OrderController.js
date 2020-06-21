@@ -32,6 +32,7 @@ module.exports = {
         card,
       };
       const check_response = await PaymentService.check_order(payment_payload, req.headers['authorization']);
+      console.log(check_response);
       if (check_response.status !== 200)
         return ResponseHelper.json(400, res, `Payment service - ${check_response.data.message}`);
 
@@ -76,6 +77,7 @@ module.exports = {
 
       return ResponseHelper.json(201, res, 'Order created successfully', order);
     } catch (e) {
+      console.log(e)
       return ResponseHelper.error(e, res);
     }
   },
