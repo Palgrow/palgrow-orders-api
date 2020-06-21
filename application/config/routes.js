@@ -42,4 +42,6 @@ module.exports.routes = {
   'DELETE /orders/referral-rule/:id': 'ReferralRuleController.delete',
 
   'POST /orders/order/': 'OrderController.create',
+  'POST /orders/order/query': 'OrderController.query',
+
 };

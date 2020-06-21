@@ -47,5 +47,6 @@ module.exports.policies = {
 
   OrderController: {
     create: ['isAuthorized', 'isDistributor'],
+    query: ['isAuthorized'],
   },
 };

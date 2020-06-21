@@ -79,4 +79,33 @@ module.exports = {
       return ResponseHelper.error(e, res);
     }
   },
+
+  query: async (req, res) => {
+    try {
+
+      const { criteria = {}, populate: populated_fields = [] } = req.body;
+      const { per_page, page: _page } = req.query;
+      const perPage = per_page || 20;
+      const page = _page || 1;
+      const skip = perPage * (page - 1);
+      const populate = populated_fields.reduce((result, field) => ({ ...result, [field]: true }), {});
+      const records = await Order.find({ where: criteria, limit: perPage, skip }, populate);
+      const count = await Order.count(criteria);
+
+      const meta = {
+        criteria,
+        page,
+        populate: Object.keys(populate),
+        total: count,
+        prev_page: page > 1 ? page - 1 : false,
+        per_page: perPage,
+        next_page: count - (skip + perPage) > 0 ? page + 1 : false,
+        page_count: Math.ceil(count / perPage),
+      };
+
+      return ResponseHelper.json(200, res, 'Orders retrieved successfully', records, meta);
+    } catch (e) {
+      return ResponseHelper.error(e, res);
+    }
+  }
 };
