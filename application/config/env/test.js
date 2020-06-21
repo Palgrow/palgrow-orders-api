@@ -50,7 +50,7 @@ module.exports = {
     },
     settings: {
       api: {
-        baseUrl: 'http://localhost:4000',
+        baseUrl: 'http://localhost:4000/',
       },
     },
     sockets: {
